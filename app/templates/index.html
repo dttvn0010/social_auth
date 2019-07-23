@@ -1,0 +1,6 @@
+{% if user.is_authenticated %}
+    <p>Logged in as  {{  user.username }}</p>
+    <a href='{% url "logout" %}'>Log out</a>
+{% else %}
+    <a href='{% url "social:begin" "google-oauth2" %}'>Log in</a>
+{% endif %}
